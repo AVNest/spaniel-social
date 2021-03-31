@@ -1,0 +1,14 @@
+.content {
+    grid-area: cont;
+    background-color: blanchedalmond;
+}
+
+.item {
+    color: goldenrod;
+}
+
+.item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+}

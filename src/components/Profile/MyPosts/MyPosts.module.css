@@ -1,0 +1,15 @@
+.postBlock {
+    padding: 10px;
+}
+
+.post {
+    margin-top: 20px;
+}
+
+.item {
+    color: goldenrod;
+}
+
+.item img {
+    width: 60px;
+}
