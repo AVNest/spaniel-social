@@ -17,10 +17,11 @@ const App = (props) => {
                            render={ () => <Profile /> }/>
                     <Route path='/dialogs'
                            render={ () => <DialogsContainer /> }/>
+                    <Route path='/users'
+                           render={ () => <div>users</div> }/>
                 </div>
             </div>
     );
 }
-
 
 export default App;
