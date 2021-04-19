@@ -3,38 +3,38 @@ const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS'
 
 let initialState = {
-    usersData: [
-        {
-            id: 1,
-            photoUrl: '',
-            followed: false,
-            fullName: 'Grost',
-            status: 'Creator this net',
-            location: {city: 'Tomsk', country: 'Russia'}
-        },
-        {
-            id: 2,
-            photoUrl: '',
-            followed: false,
-            fullName: 'Stusha',
-            status: 'Boss Wife',
-            location: {city: 'Tomsk', country: 'Russia'}},
-        {
-            id: 3,
-            photoUrl: '',
-            followed: false,
-            fullName: 'Elena',
-            status: 'Mother of god',
-            location: {city: 'Tomsk', country: 'Russia'}
-        },
-        {
-            id: 4,
-            photoUrl: '',
-            followed: false,
-            fullName: 'Valeriy',
-            status: 'All father',
-            location: {city: 'Tomsk', country: 'Russia'}
-        },
+    users: [
+        // {
+        //     id: 1,
+        //     photoUrl: 'https://tvaryny.com/sites/default/files/styles/medium/public/images/breed/141470/logo-141470.jpg?itok=ZcCt5Lgx',
+        //     followed: true,
+        //     fullName: 'Grost',
+        //     status: 'Creator this net',
+        //     location: {city: 'Tomsk', country: 'Russia'}
+        // },
+        // {
+        //     id: 2,
+        //     photoUrl: 'https://tvaryny.com/sites/default/files/styles/medium/public/images/breed/141470/logo-141470.jpg?itok=ZcCt5Lgx',
+        //     followed: false,
+        //     fullName: 'Stusha',
+        //     status: 'Boss Wife',
+        //     location: {city: 'Tomsk', country: 'Russia'}},
+        // {
+        //     id: 3,
+        //     photoUrl: 'https://tvaryny.com/sites/default/files/styles/medium/public/images/breed/141470/logo-141470.jpg?itok=ZcCt5Lgx',
+        //     followed: false,
+        //     fullName: 'Elena',
+        //     status: 'Mother of god',
+        //     location: {city: 'Tomsk', country: 'Russia'}
+        // },
+        // {
+        //     id: 4,
+        //     photoUrl: 'https://tvaryny.com/sites/default/files/styles/medium/public/images/breed/141470/logo-141470.jpg?itok=ZcCt5Lgx',
+        //     followed: false,
+        //     fullName: 'Valeriy',
+        //     status: 'All father',
+        //     location: {city: 'Tomsk', country: 'Russia'}
+        // },
 
     ]
 }
@@ -44,7 +44,7 @@ const usersReducer = (state = initialState, action) => {
         case FOLLOW:
             return {
                 ...state,
-                usersData: state.usersData.map(u => {
+                users: state.users.map(u => {
                     if (u.id === action.userId) {
                         return {...u, followed: true}
                     }
@@ -54,7 +54,7 @@ const usersReducer = (state = initialState, action) => {
         case UNFOLLOW:
             return {
                 ...state,
-                usersData: state.usersData.map(u => {
+                users: state.users.map(u => {
                     if (u.id === action.userId) {
                         return {...u, followed: false}
                     }
@@ -63,7 +63,7 @@ const usersReducer = (state = initialState, action) => {
             }
         case SET_USERS: {
             return {
-                ...state, usersData: [...state.usersData, ...action.usersData]
+                ...state, users: [...state.users, ...action.users]
             }
         }
 
