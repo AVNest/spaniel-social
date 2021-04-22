@@ -1,42 +1,14 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
-const SET_USERS = 'SET_USERS'
+const SET_USERS = 'SET_USERS';
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const SET_USERS_TOTAL_COUNT = 'SET_USERS_TOTAL_COUNT';
 
 let initialState = {
-    users: [
-        // {
-        //     id: 1,
-        //     photoUrl: 'https://tvaryny.com/sites/default/files/styles/medium/public/images/breed/141470/logo-141470.jpg?itok=ZcCt5Lgx',
-        //     followed: true,
-        //     fullName: 'Grost',
-        //     status: 'Creator this net',
-        //     location: {city: 'Tomsk', country: 'Russia'}
-        // },
-        // {
-        //     id: 2,
-        //     photoUrl: 'https://tvaryny.com/sites/default/files/styles/medium/public/images/breed/141470/logo-141470.jpg?itok=ZcCt5Lgx',
-        //     followed: false,
-        //     fullName: 'Stusha',
-        //     status: 'Boss Wife',
-        //     location: {city: 'Tomsk', country: 'Russia'}},
-        // {
-        //     id: 3,
-        //     photoUrl: 'https://tvaryny.com/sites/default/files/styles/medium/public/images/breed/141470/logo-141470.jpg?itok=ZcCt5Lgx',
-        //     followed: false,
-        //     fullName: 'Elena',
-        //     status: 'Mother of god',
-        //     location: {city: 'Tomsk', country: 'Russia'}
-        // },
-        // {
-        //     id: 4,
-        //     photoUrl: 'https://tvaryny.com/sites/default/files/styles/medium/public/images/breed/141470/logo-141470.jpg?itok=ZcCt5Lgx',
-        //     followed: false,
-        //     fullName: 'Valeriy',
-        //     status: 'All father',
-        //     location: {city: 'Tomsk', country: 'Russia'}
-        // },
-
-    ]
+    users: [],
+    pageSize: 5,
+    totalUsersCount: 0,
+    currentPage: 2
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -62,9 +34,13 @@ const usersReducer = (state = initialState, action) => {
                 })
             }
         case SET_USERS: {
-            return {
-                ...state, users: [...state.users, ...action.users]
-            }
+            return {...state, users: action.users}
+        }
+        case SET_CURRENT_PAGE: {
+            return {...state, currentPage: action.currentPage}
+        }
+        case SET_USERS_TOTAL_COUNT: {
+            return {...state, totalUsersCount: action.count}
         }
 
         default :
@@ -75,5 +51,7 @@ const usersReducer = (state = initialState, action) => {
 export const followAC = (userId) => ({type: FOLLOW, userId})
 export const unFollowAC = (userId) => ({type: UNFOLLOW, userId})
 export const setUsersAC = (users) => ({type: SET_USERS, users})
+export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
+export const setUsersTotalCountAC = (totalUsersCount) => ({type: SET_USERS_TOTAL_COUNT, count: totalUsersCount})
 
 export default usersReducer;
