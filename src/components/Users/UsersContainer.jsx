@@ -14,7 +14,6 @@ import Preloader from "../common/Preloader/Preloader";
 
 
 class UsersContainer extends React.Component {
-
     componentDidMount() {
         this.props.toggleIsFetching(true);
         axios.get(
