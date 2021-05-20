@@ -16,4 +16,18 @@ export const UsersAPI = {
                 return response.data
             })
     }
+
+    /*follow(currentPage = 1, pageSize = 10) {
+        return instance.post(`follow/${u.id}`)
+            .then(response => {
+                return response.data
+            })
+    }*/
+
+    /*unfollow(currentPage = 1, pageSize = 10) {
+        return instance.delete(`follow/${u.id}`)
+            .then(response => {
+                return response.data
+            })
+    }*/
 }
