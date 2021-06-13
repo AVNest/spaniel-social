@@ -73,7 +73,7 @@ export default compose(
             toggleFollowingInProgress,
 
         }),
-    withAuthRedirect
+    //withAuthRedirect
 )(UsersContainer)
 
 
