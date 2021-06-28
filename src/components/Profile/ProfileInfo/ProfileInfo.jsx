@@ -15,7 +15,7 @@ const ProfileInfo = (props) => {
         <div className={classes.content}>
             <div>
                 <img className={classes.headerImg} src='https://pets2.me/media/res/2/6/7/2/2672.otsiro.300.jpg'/>
-                <ProfileStatus status="helloooo"/>
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
 
             </div>
             <div className={classes.descriptionBlock}>
